@@ -1,0 +1,41 @@
+.custom-btn {
+  width: 120px;
+}
+
+.custom-btn-right p {
+  background: rgb(227,19,65);
+  background: linear-gradient(40deg, rgba(227,19,65,1) 0%, rgba(255,214,0,1) 100%);
+}
+
+.custom-btn-left p {
+  background: rgb(0,42,245);
+  background: linear-gradient(40deg, rgba(0,42,245,1) 0%, rgba(51,255,40,1) 100%);
+}
+
+.custom-btn p {
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 18px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.custom-btn-left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 16px;
+  border-top-left-radius: 16px;
+  border-right-width: 1px;
+  /*border-right-color: rgba(0,0,0,0.5);*/
+}
+
+.custom-btn-right {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+  border-left-width: 1px;
+  border-left-color: rgba(0,0,0,0.5);
+}
+

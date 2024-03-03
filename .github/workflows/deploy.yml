@@ -1,0 +1,29 @@
+name: Deploy to Production
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+        id-token: write
+        contents: read
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        aws-region: eu-west-3 # not important, will be overwritten by sst deploy
+    - name: Install dependencies
+      run: npm install
+    - name: Deploy in Production
+      run: npm run deploy -- --stage prod
