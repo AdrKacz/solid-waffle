@@ -1,0 +1,8 @@
+@font-face {
+	font-family: 'LuckiestGuy';
+	src: url(../../assets/fonts/LuckiestGuy-da3aadef1a82680d9103d661ba18c66e.woff2?h=7411cb80dfb3ae95d276e2d52294ba32) format('woff2'),
+	url(../../assets/fonts/LuckiestGuy-a69ea87ae8ff41df2ff817a3f18bf772.woff?h=7411cb80dfb3ae95d276e2d52294ba32) format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
