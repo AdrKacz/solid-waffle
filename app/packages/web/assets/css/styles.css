@@ -39,3 +39,8 @@
   border-left-color: rgba(0,0,0,0.5);
 }
 
+body {
+  background: rgb(32,20,235);
+  background: linear-gradient(90deg, rgba(32,20,235,1) 0%, rgba(255,0,14,1) 100%);
+}
+
