@@ -25,7 +25,7 @@ console.log('Quotes: ', quotes)
 
 export const handler = ApiHandler(async (event: any) => {
     // @TODO: send quotes already displayed to not send them back again
-    // @TODO: convert to POST and send the quotes already displayed
+    // @TODO: add query params to exclude some quotes id
 
     const quote = quotes[Math.floor(Math.random() * quotes.length)]
     console.log('Quote: ', quote)
