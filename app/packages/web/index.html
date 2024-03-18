@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en" style="min-height: 100dvh;">
+<html data-bs-theme="light" lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -15,84 +15,58 @@
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/LuckiestGuy.css?h=7411cb80dfb3ae95d276e2d52294ba32">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-icons.css?h=cefcef07d3713b8fc3256beb7749a4b2">
-    <link rel="stylesheet" href="assets/css/styles.css?h=78d842e4576a8a049ed2aeced4eac6ad">
+    <link rel="stylesheet" href="assets/css/styles.css?h=eb8392f183c3411b5518d4eef021f590">
 </head>
 
-<body style="background: rgb(32,20,235);background: linear-gradient(90deg, rgba(32,20,235,1) 0%, rgba(255,0,14,1) 100%);">
-    <div class="col d-flex flex-column" style="height: 100dvh;">
-        <div class="container d-flex justify-content-center" style="margin-top: 24px;">
-            <h1 class="text-center text-light" style="font-family: LuckiestGuy;">Macron ou pas Macron</h1>
-        </div>
-        <div class="d-flex flex-grow-1 justify-content-center align-items-center align-items-lg-center">
-            <div class="container d-flex flex-column justify-content-between" style="height: 30dvh;">
-                <div class="row">
-                    <div class="col text-center justify-content-center align-items-center">
-                        <p class="lead fw-semibold text-light" style="text-shadow: 2px 2px 0px black;">On ne s'attendait pas à ce qu'une pandémie touche plusieurs pays en même temps.</p>
+<body>
+    <div class="vstack d-flex" style="min-height: 100dvh;">
+        <div class="flex-grow-1">
+            <!-- Start: Navbar Right Links -->
+            <nav class="navbar navbar-expand-md py-3">
+                <div class="container"><a class="navbar-brand d-flex align-items-center" href="../../index.html"><span class="bs-icon-md bs-icon-rounded d-flex justify-content-center align-items-center me-2 bs-icon"><img class="img-fluid" src="assets/img/waffle.png?h=851f0c55926fd7e75a256ecb9c537547"></span><span class="text-end d-lg-flex align-items-lg-start" style="color: var(--bs-light);font-family: LuckiestGuy;font-size: 26px;padding-top: 10px;">Solid Waffle</span></a></div>
+            </nav><!-- End: Navbar Right Links -->
+            <!-- Start: Hero Banner -->
+            <section class="py-4 py-xl-5" style="color: var(--bs-light);">
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
+                            <div>
+                                <h2 class="text-uppercase fw-bold mb-3"><strong>Bienvenue dans le squad anti-désinfo !</strong></h2>
+                                <p class="mb-4">Un espace pour vérifier l'information politique, proposant des alternatives et des perspectives diverses, afin d'encourager un débat éclairé et une compréhension approfondie des enjeux socio-politiques.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col d-flex d-lg-flex justify-content-end justify-content-lg-center justify-content-xl-end" style="padding: 0;">
-                        <!-- Start: Left Button --><button id="macron" class="custom-btn-left custom-btn btn btn-lg bg-light" type="button"><p>Macron</p></button><!-- End: Left Button -->
-                    </div>
-                    <div class="col d-flex d-lg-flex justify-content-start justify-content-lg-center justify-content-xl-start" style="padding: 0;">
-                        <!-- Start: Right Button --><button id="pas-macron" class="custom-btn-right custom-btn btn btn-lg bg-light" type="button"><p>Pas Macron</p></button><!-- End: Right Button -->
+            </section><!-- End: Hero Banner -->
+            <!-- Start: Newsletter Subscription Clean -->
+            <section class="py-4 py-xl-5">
+                <div class="container">
+                    <div class="text-dark bg-light border rounded border-0 border-light d-flex flex-column justify-content-between align-items-center flex-lg-row p-4 p-lg-5" data-bs-theme="light">
+                        <div class="text-center text-lg-start py-3 py-lg-1">
+                            <h2 class="fw-bold mb-2"><strong>Tu veux participer ?</strong></h2>
+                            <p class="mb-0">Une idée ? Une collab' ? On t'écoute !</p>
+                        </div>
+                        <form class="d-flex justify-content-center flex-wrap my-2" data-bss-recipient="8fd8951f00487d3536ca7664e66c7a4a" data-bss-subject="Solid Waffle" data-bss-success-title="Envoyé" data-bss-loading-message="Envoie ..." data-bss-success-message="Ton message a été envoyé." data-bss-error-title="Oops ..." data-bss-error-message="Quelque chose s'est mal passée, essaie plus tard." data-bss-filesize-message="La taille total ne doit pas excéder 10 Mb." data-bss-empty-form-message="Remplis les champs nécessaires et réessaie." data-bss-close="Fermer">
+                            <div class="my-2"><input class="form-control" type="email" name="email" placeholder="Ton email" required=""></div>
+                            <div class="my-2"><button class="btn btn-dark ms-sm-2" type="submit">Contacte-nous</button></div>
+                        </form>
                     </div>
                 </div>
+            </section><!-- End: Newsletter Subscription Clean -->
+        </div><!-- Start: Footer Dark -->
+        <footer class="text-center bg-dark">
+            <div class="container text-white py-4 py-lg-5">
+                <ul class="list-inline">
+                    <li class="list-inline-item me-4"><a class="link-light" href="terms/fr/condition-utilisation.html">Conditions d'utilisation</a></li>
+                    <li class="list-inline-item me-4"><a class="link-light" href="terms/fr/politique-confidentialite.html">Politique de confidentialité</a></li>
+                </ul>
+                <p class="text-white-50 mb-0">Copyright © 2024 Solid Waffle</p>
             </div>
-        </div><!-- Start: Footer Basic -->
-        <footer class="text-center">
-            <div class="container text-muted py-4 py-lg-5">
-                <p class="text-light text-opacity-50 mb-0">Copyright © 2024 MacronOuPasMacron</p>
-            </div>
-        </footer><!-- End: Footer Basic -->
-    </div><!-- Start: Success Modal -->
-    <div class="modal" role="dialog" tabindex="-1" id="success-modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><i class="far fa-check-circle text-success"></i>
-                    <h5 class="modal-title">&nbsp;Bien joué !</h5><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>C'était une citation de Bush.</p>
-                    <div class="hstack gap-2 d-flex justify-content-center">
-                        <!-- Start: Share Button --><button class="btn btn-dark" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-share">
-                                <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"></path>
-                            </svg></button><!-- End: Share Button -->
-                        <!-- Start: Next Button --><button class="btn btn-dark" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
-                                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
-                                <path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1c-4.2-4.5-10.1-7.1-16.3-7.1C266 128 256 138 256 150.3V208H160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h96v57.7c0 12.3 10 22.3 22.3 22.3c6.2 0 12.1-2.6 16.3-7.1l99.9-107.1c3.5-3.8 5.5-8.7 5.5-13.8s-2-10.1-5.5-13.8L294.6 135.1z"></path>
-                            </svg>&nbsp;Suivant</button><!-- End: Next Button -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- End: Success Modal -->
-    <!-- Start: Fail Modal -->
-    <div class="modal" role="dialog" tabindex="-1" id="fail-modal">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><i class="far fa-times-circle text-danger"></i>
-                    <h5 class="modal-title">&nbsp;Dommage ...</h5><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <p>C'était une citation de Bush.</p>
-                    <div class="hstack gap-2 d-flex justify-content-center">
-                        <!-- Start: Share Button --><button class="btn btn-dark" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-share">
-                                <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"></path>
-                            </svg></button><!-- End: Share Button -->
-                        <!-- Start: Next Button --><button class="btn btn-dark" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor">
-                                <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->
-                                <path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1c-4.2-4.5-10.1-7.1-16.3-7.1C266 128 256 138 256 150.3V208H160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h96v57.7c0 12.3 10 22.3 22.3 22.3c6.2 0 12.1-2.6 16.3-7.1l99.9-107.1c3.5-3.8 5.5-8.7 5.5-13.8s-2-10.1-5.5-13.8L294.6 135.1z"></path>
-                            </svg>&nbsp;Suivant</button><!-- End: Next Button -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- End: Fail Modal -->
+        </footer><!-- End: Footer Dark -->
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/answer.mjs?h=5e302123c3434419eabc0f7e7db01dbc" type="module"></script>
+    <script src="assets/js/smart-forms.mjs?h=e020daad4628441515be04aa856e08f4" type="module"></script>
 </body>
 
 </html>
