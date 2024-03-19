@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "AWS_PROFILE=SolidWaffle sst dev",
     "build": "AWS_PROFILE=SolidWaffle sst build",
+    "build:noprofile": "sst build",
     "deploy": "sst deploy",
     "remove": "sst remove",
     "console": "sst console",
