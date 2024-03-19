@@ -1,12 +1,12 @@
-name: Deploy to Production
+# Verifies the SST app is building, it does not deploy anything
+name: Build
 
 on:
-  workflow_dispatch:
-  push:
+  pull_request:
     branches: [ "main" ]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     # These permissions are needed to interact with GitHub's OIDC Token endpoint.
     permissions:
@@ -21,9 +21,9 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
-        aws-region: eu-west-3 # not important, will be overwritten by sst deploy
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME_READ_ONLY }}
+        aws-region: eu-west-3 # not important, will be overwritten by sst build
     - name: Install dependencies
       run: npm install
-    - name: Deploy in Production
-      run: npm run deploy -- --stage prod
+    - name: Build (Production)
+      run: npm run build:noprofile -- --stage prod

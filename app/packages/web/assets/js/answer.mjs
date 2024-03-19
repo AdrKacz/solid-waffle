@@ -1,7 +1,7 @@
 // Fetch quote
 const API_URL = import.meta.env.VITE_APP_API_URL
 let isMacron = false // default value
-await (async function _() {
+(async function _() {
     const response = await fetch(API_URL + '/quote', { method: 'GET' })
     
     const quote = await response.json()
