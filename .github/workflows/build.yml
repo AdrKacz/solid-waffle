@@ -1,0 +1,29 @@
+# Verifies the SST app is building, it does not deploy anything
+name: Build
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+        id-token: write
+        contents: read
+    defaults:
+      run:
+        working-directory: ./app
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        aws-region: eu-west-3 # not important, will be overwritten by sst build
+    - name: Install dependencies
+      run: npm install
+    - name: Build (Production)
+      run: npm run build -- --stage prod
