@@ -21,7 +21,7 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
-        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+        role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME_READ_ONLY }}
         aws-region: eu-west-3 # not important, will be overwritten by sst build
     - name: Install dependencies
       run: npm install
