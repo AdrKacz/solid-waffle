@@ -4,7 +4,7 @@ import { Stack } from "./stacks/Stack";
 export default {
   config(_input) {
     return {
-      name: "app",
+      name: "SolidWaffle",
       region: "eu-west-3",
     };
   },

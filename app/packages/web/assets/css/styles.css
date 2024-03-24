@@ -44,3 +44,7 @@ body {
   background: linear-gradient(90deg, rgba(32,20,235,1) 0%, rgba(255,0,14,1) 100%);
 }
 
+.hide {
+  display: none;
+}
+

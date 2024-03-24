@@ -6,10 +6,11 @@
   "scripts": {
     "dev": "AWS_PROFILE=SolidWaffle sst dev",
     "build": "AWS_PROFILE=SolidWaffle sst build",
+    "deploy": "AWS_PROFILE=SolidWaffle sst deploy",
+    "remove": "AWS_PROFILE=SolidWaffle sst remove",
+    "console": "AWS_PROFILE=SolidWaffle sst console",
     "build:noprofile": "sst build",
-    "deploy": "sst deploy",
-    "remove": "sst remove",
-    "console": "sst console",
+    "deploy:noprofile": "sst deploy",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
