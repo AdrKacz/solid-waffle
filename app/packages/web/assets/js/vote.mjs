@@ -63,6 +63,7 @@ failModalCloseButton.addEventListener('click', () => {
 const shareButtons = document.querySelectorAll('button.share-quote')
 
 const getShareData = (id) => ({
+    title: "Macron ou pas Macron ?",
     text: "Macron ou pas Macron ?",
     url: `${window.location.origin + window.location.pathname}?quote=${id}`,
 })

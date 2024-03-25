@@ -19,6 +19,7 @@ def move_file(old_file_path, new_file_path):
         print(f"File not found: {old_file_path}")
 move_file(os.path.join(folder_path, "assets/js/smart-forms.min.js"), os.path.join(folder_path, "assets/js/smart-forms.mjs"))
 move_file(os.path.join(folder_path, "sitemap.xml"), os.path.join(folder_path, "public/sitemap.xml"))
+move_file(os.path.join(folder_path, "ads.txt"), os.path.join(folder_path, "public/ads.txt"))
 
 # Task 2: Replace script tag in HTML files
 html_files = []
