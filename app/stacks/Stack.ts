@@ -1,8 +1,16 @@
 import { StackContext, StaticSite, Bucket, Api } from "sst/constructs";
 import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
+import { RemovalPolicy } from "aws-cdk-lib";
 
 export function Stack({ stack }: StackContext) {
-  const bucket = new Bucket(stack, "bucket");
+  const bucket = new Bucket(stack, "bucket", {
+    cdk: {
+      bucket: {
+        autoDeleteObjects: true,
+        removalPolicy: RemovalPolicy.DESTROY,
+      },
+    },
+  });
 
   new s3deploy.BucketDeployment(stack, "QuoteDeployment", {
     sources: [s3deploy.Source.asset(`../quotes/`)],
@@ -12,7 +20,10 @@ export function Stack({ stack }: StackContext) {
 
   const api = new Api(stack, 'api', {
     defaults: { function: { bind: [bucket] } },
-    routes: { "GET /quote": "packages/api/src/get/quote.handler" },
+    routes: {
+      "GET /quote": "packages/api/src/get/quote.handler",
+      "GET /quote/{id}": "packages/api/src/get/quote.handler"
+    },
   })
 
   const web = new StaticSite(stack, "web", {
@@ -23,11 +34,11 @@ export function Stack({ stack }: StackContext) {
       domainName: 'macronoupasmacron.fr',
       domainAlias: `www.macronoupasmacron.fr`,
     } : undefined,
-    environment: { VITE_APP_API_URL: api.customDomainUrl || api.url }
+    environment: { VITE_APP_API_URL: api.url }
   });
 
   stack.addOutputs({
-    "Api URL": api.customDomainUrl || api.url,
+    "Api URL": api.url,
     "Web URL": web.customDomainUrl || web.url,
   });
 }
