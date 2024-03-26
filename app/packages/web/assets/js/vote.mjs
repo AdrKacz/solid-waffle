@@ -31,7 +31,7 @@ async function fetchQuote(id) {
     document.querySelector('#quote-paragraph').textContent = data.quote
     
     // Save quote as seen
-    setQuote(data.id, 10000) // expire in a day (you may see the same quote after 3 days)
+    setQuote(data.id, 3 * MILLISECONDS_IN_A_DAY) // expire in a day (you may see the same quote after 3 days)
 }
 
 if (parseInt(quote.id)) {
