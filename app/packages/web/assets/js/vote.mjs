@@ -1,3 +1,7 @@
+import { setQuote, getQuotes } from './storage'
+
+const MILLISECONDS_IN_A_DAY = 86400000
+
 // Read first quote id if any
 const quote = { id: new URLSearchParams(window.location.search).get("quote") }
 
@@ -6,7 +10,15 @@ console.log(import.meta.env)
 const API_URL = import.meta.env.VITE_APP_API_URL
 let isMacron = false // default value
 async function fetchQuote(id) {
-    const path = typeof id === 'string' ? `/quote/${id}` : `/quote`
+    let path
+    if (typeof id === 'string') {
+        path = `/quote/${id}`
+    } else {
+        // Get seen quotes
+        const seenQuotes = Object.keys(getQuotes())
+        path = `/quote?exclude=${seenQuotes.join(',')}`
+    }
+    
     const response = await fetch(API_URL + path, { method: 'GET' })
     const data = await response.json()
     quote.data = data
@@ -17,6 +29,9 @@ async function fetchQuote(id) {
     document.querySelector('#success-paragraph').innerHTML = `Tu veux en savoir plus ? ${source}`
     document.querySelector('#fail-paragraph').innerHTML = `C'était une citation de ${data.author} (${source}).`
     document.querySelector('#quote-paragraph').textContent = data.quote
+    
+    // Save quote as seen
+    setQuote(data.id, 3 * MILLISECONDS_IN_A_DAY) // expire in a day (you may see the same quote after 3 days)
 }
 
 if (parseInt(quote.id)) {
@@ -24,7 +39,6 @@ if (parseInt(quote.id)) {
 } else {
     fetchQuote()
 }
-
 
 // Set answers
 const macronButton = document.querySelector('#macron')
@@ -63,6 +77,7 @@ failModalCloseButton.addEventListener('click', () => {
 const shareButtons = document.querySelectorAll('button.share-quote')
 
 const getShareData = (id) => ({
+    title: "Macron ou pas Macron ?",
     text: "Macron ou pas Macron ?",
     url: `${window.location.origin + window.location.pathname}?quote=${id}`,
 })
